@@ -211,6 +211,7 @@ describe Puppet::Type.type(:cs_primitive).provider(:pcs) do
     it "sets a primitive_class parameter corresponding to the <primitive>'s class attribute" do
       vip_instance.primitive_class = 'IPaddr3'
       expect_update(/resource (create|delete|op remove) example_vip/)
+      expect_update(/resource op remove example_vip/)
       vip_instance.flush
     end
 
